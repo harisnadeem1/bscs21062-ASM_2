@@ -40,10 +40,24 @@ app.post('/profile', (req, res) => {
 });
 
 
-app.get('/hello/:name', (req, res) => {
-    const name = req.params.name;
-    res.send(`Hello, ${name}`);
+const csv = require('csv-parser');
+
+app.get('/profiles', (req, res) => {
+    const profiles = [];
+
+    fs.createReadStream('profiles.csv')
+        .pipe(csv())
+        .on('data', (row) => {
+            profiles.push(row);
+        })
+        .on('end', () => {
+            res.json(profiles);
+        })
+        .on('error', (err) => {
+            res.status(500).json({ error: 'Server error while reading CSV file' });
+        });
 });
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
