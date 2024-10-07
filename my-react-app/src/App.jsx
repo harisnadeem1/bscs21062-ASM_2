@@ -7,6 +7,8 @@ import TextArea from './components/TextArea.jsx';
 import LeftSideBar from './components/left-sidebar-button.jsx';
 import ReactionBar from './components/ReactionBar.jsx';
 import PostHeader from './components/post-Header.jsx';
+import MenuItem from './components/MenuItem.jsx';
+
 
 
 const Admin = () => {
@@ -27,6 +29,7 @@ const Admin = () => {
       <LeftSideBar/>
       <ReactionBar/>
       <PostHeader/>
+      <MenuItem/>
 
 
 
