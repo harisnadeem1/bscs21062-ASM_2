@@ -14,6 +14,7 @@ import './assets/css/nice-select.css';
 import './assets/css/animate.min.css';
 import './assets/css/owl.carousel.css';
 import './assets/css/main.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 
 import Admin from './App.jsx'
