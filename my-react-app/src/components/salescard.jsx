@@ -1,30 +1,39 @@
-import React from 'react';
-import '../css/app.css';
-
+import React, { useEffect } from "react";
+import feather from "feather-icons";
+import "../css/app.css"; // Make sure your styles are correctly linked
 
 const SalesCard = () => {
-    return (
-        <div class="card">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col mt-0">
-                        <h5 class="card-title">Sales</h5>
-                    </div>
+  // Use useEffect to initialize Feather icons after the component renders
+  useEffect(() => {
+    feather.replace(); // Replaces <i> tags with Feather icons
+  }, []);
 
-                    <div class="col-auto">
-                        <div class="stat text-primary">
-                            <i class="align-middle" data-feather="truck"></i>
-                        </div>
-                    </div>
-                </div>
-                <h1 class="mt-1 mb-3">2.382</h1>
-                <div class="mb-0">
-                    <span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> -3.65% </span>
-                    <span class="text-muted">Since last week</span>
-                </div>
+  return (
+    <div className="card">
+      <div className="card-body">
+        <div className="row">
+          <div className="col mt-0">
+            <h5 className="card-title">Sales</h5>
+          </div>
+
+          <div className="col-auto">
+            <div className="stat text-primary">
+              <i className="align-middle" data-feather="truck"></i> {/* Feather icon */}
             </div>
+          </div>
         </div>
-    );
+        <h1 className="mt-1 mb-3">2.382</h1>
+        <div className="mb-0">
+          <span className="text-danger">
+            {" "}
+            <i className="mdi mdi-arrow-bottom-right"></i> -3.65%{" "}
+          </span>
+          <span className="text-muted">Since last week</span>
+        </div>
+      </div>
+    </div>
+    
+  );
 };
 
 export default SalesCard;
