@@ -6,6 +6,7 @@ import PrimaryButton from './components/primary-button.jsx';
 import TextArea from './components/TextArea.jsx';
 import LeftSideBar from './components/left-sidebar-button.jsx';
 import ReactionBar from './components/ReactionBar.jsx';
+import PostHeader from './components/post-Header.jsx';
 
 
 const Admin = () => {
@@ -25,6 +26,7 @@ const Admin = () => {
       <h2>Argon-Social Media</h2>
       <LeftSideBar/>
       <ReactionBar/>
+      <PostHeader/>
 
 
 
