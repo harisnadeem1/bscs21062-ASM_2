@@ -1,6 +1,7 @@
 import React from 'react';
 import SalesCard from "./components/salescard.jsx";
 import Input from "./components/input.jsx";
+import DropdDown from './components/dropdown-menu.jsx';
 
 
 
@@ -9,6 +10,7 @@ const Dashboard = () => {
     <div >
       <SalesCard/>
       <Input/>
+      <DropdDown/>
     </div>
   );
 };
