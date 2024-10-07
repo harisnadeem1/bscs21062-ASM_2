@@ -60,10 +60,10 @@ app.get('/profiles', (req, res) => {
 });
 
 
-app.get('/hello/:name', (req, res) => {
-    const name = req.params.name;
-    res.send(`Hello, ${name}`);
-});
+app.get('/hello/Haris', (req, res) => {
+    res.send('Hello, Haris');
+  });
+  
 
 
 
