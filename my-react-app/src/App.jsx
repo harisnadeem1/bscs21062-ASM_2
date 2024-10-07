@@ -5,6 +5,7 @@ import DropdDown from './components/dropdown-menu.jsx';
 import PrimaryButton from './components/primary-button.jsx';
 import TextArea from './components/TextArea.jsx';
 import LeftSideBar from './components/left-sidebar-button.jsx';
+import ReactionBar from './components/ReactionBar.jsx';
 
 
 const Admin = () => {
@@ -23,6 +24,7 @@ const Admin = () => {
 
       <h2>Argon-Social Media</h2>
       <LeftSideBar/>
+      <ReactionBar/>
 
 
 
