@@ -9,6 +9,7 @@ import ReactionBar from './components/ReactionBar.jsx';
 import PostHeader from './components/post-Header.jsx';
 import MenuItem from './components/MenuItem.jsx';
 import ReviewItem from './components/review-card.jsx';
+import VideoSection from './components/video-post.jsx';
 
 
 
@@ -35,6 +36,7 @@ const Admin = () => {
 
       <MenuItem/>
       <ReviewItem/>
+      <VideoSection/>
 
 
 
