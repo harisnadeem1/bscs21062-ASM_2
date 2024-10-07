@@ -7,6 +7,13 @@ const fs = require('fs');
 app.post('/profile', (req, res) => {
     const profile = req.body;
 
+    const requiredFields = ['Name', 'Title', 'TargetedKeywords', 'Education', 'Certification', 'Contact'];
+    const missingFields = requiredFields.filter(field => !profile[field]);
+
+    if (missingFields.length > 0) {
+        return res.status(400).json({ error: `Missing fields: ${missingFields.join(', ')}` });
+    }
+
     fs.readFile('profiles.json', (err, data) => {
         if (err && err.code !== 'ENOENT') {
             return res.status(500).json({ error: 'Server error while reading file' });
@@ -31,6 +38,7 @@ app.post('/profile', (req, res) => {
         });
     });
 });
+
 
 app.get('/hello/:name', (req, res) => {
     const name = req.params.name;
