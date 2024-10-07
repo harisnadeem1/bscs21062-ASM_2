@@ -18,7 +18,7 @@ app.post('/profile', (req, res) => {
         if (err && err.code !== 'ENOENT') {
             return res.status(500).json({ error: 'Server error while reading file' });
         }
-
+    
         let profiles = [];
         if (!err) {
             try {
@@ -27,9 +27,9 @@ app.post('/profile', (req, res) => {
                 return res.status(500).json({ error: 'Server error while parsing profiles' });
             }
         }
-
+    
         profiles.push(profile);
-
+    
         fs.writeFile('profiles.json', JSON.stringify(profiles, null, 2), (err) => {
             if (err) {
                 return res.status(500).json({ error: 'Server error while writing file' });
@@ -37,6 +37,7 @@ app.post('/profile', (req, res) => {
             res.status(201).json({ message: 'Profile saved successfully' });
         });
     });
+    
 });
 
 
@@ -57,6 +58,13 @@ app.get('/profiles', (req, res) => {
             res.status(500).json({ error: 'Server error while reading CSV file' });
         });
 });
+
+
+app.get('/hello/:name', (req, res) => {
+    const name = req.params.name;
+    res.send(`Hello, ${name}`);
+});
+
 
 
 const PORT = process.env.PORT || 3000;
